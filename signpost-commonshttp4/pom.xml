@@ -7,7 +7,23 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>signpost-commonshttp4</artifactId>
   <name>signpost-commonshttp4</name>
-
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+              <Bundle-Category>oauth</Bundle-Category>
+              <Export-Package>
+                  oauth.signpost.commonshttp
+              </Export-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <dependencies>
     <dependency>
       <groupId>oauth.signpost</groupId>

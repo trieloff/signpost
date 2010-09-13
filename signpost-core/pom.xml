@@ -7,7 +7,26 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>signpost-core</artifactId>
   <name>signpost-core</name>
-   
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+              <Bundle-Category>oauth</Bundle-Category>
+              <Export-Package>
+                  oauth.signpost.*
+              </Export-Package>
+              <Private-Package>
+                  com.google.gdata.util.common.base
+              </Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <!-- dependencies -->
   <dependencies>
     <dependency>
